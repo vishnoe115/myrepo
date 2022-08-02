@@ -65,8 +65,9 @@ def stats(update, context):
 
 def start(update, context):
     buttons = ButtonMaker()
-    buttons.buildbutton("Repo", "https://www.github.com/anasty17/mirror-leech-telegram-bot")
-    buttons.buildbutton("Owner", "https://www.github.com/anasty17")
+    buttons.buildbutton("Owner", "https://www.github.com/vishnoe115/mltb-wiszky")
+    buttons.buildbutton("Support Group", "https://t.me/mirrorin")
+    buttons.buildbutton("KPOP Group", "https://t.me/iuzky")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''
@@ -268,7 +269,7 @@ def main():
     dispatcher.add_handler(stats_handler)
     dispatcher.add_handler(log_handler)
     updater.start_polling(drop_pending_updates=IGNORE_PENDING_REQUESTS)
-    LOGGER.info("Bot Started!")
+    LOGGER.info("Bot Ready!")
     signal(SIGINT, exit_clean_up)
 
 app.start()
